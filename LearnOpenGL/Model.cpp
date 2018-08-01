@@ -70,7 +70,7 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 			indices.push_back(face.mIndices[j]);
 	}
 
-	if (mesh->mMaterialIndex >= 0)
+	if (mesh->mMaterialIndex > 0)
 	{
 		aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
 		std::vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
@@ -78,8 +78,11 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 
 		std::vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 		textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
-	}
 
+		if(!textures.empty())
+		std::cout << "textures : " << textures[0].path << ", " << textures[1].path << std::endl;
+	}
+	
 	return Mesh(vertices, indices, textures);
 }
 
@@ -95,8 +98,9 @@ std::vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType 
 		bool skip = false;
 		for (unsigned int j = 0; j < textures_loaded.size(); j++)
 		{
-			if (std::strcmp(textures_loaded[j].path.data(), str.C_Str()) == 0)
+			if (std::strcmp(textures_loaded[j].path.c_str(), str.C_Str()) == 0)
 			{
+				std::cout << textures_loaded[j].path << std::endl;
 				textures.push_back(textures_loaded[j]);
 				skip = true;
 				break;
@@ -134,8 +138,11 @@ unsigned int Model::TextureFromFile(const char *path, const std::string &directo
 			format = GL_RED;
 		else if (nrComponents == 3)
 			format = GL_RGB;
-		else if (nrComponents == 4)
+		else if (nrComponents == 4) {
 			format = GL_RGBA;
+			std::cout << "format : " << GL_RGBA << std::endl;
+		}
+			
 
 		glBindTexture(GL_TEXTURE_2D, textureID);
 		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
@@ -153,6 +160,6 @@ unsigned int Model::TextureFromFile(const char *path, const std::string &directo
 		std::cout << "Texture failed to load at path: " << path << std::endl;
 		stbi_image_free(data);
 	}
-
+	std::cout << "textureID : " << textureID << std::endl;
 	return textureID;
 }
