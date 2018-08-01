@@ -39,6 +39,7 @@ void Mesh::Draw(Shader shader)
 {
 	unsigned int diffuseNr = 1;
 	unsigned int specularNr = 1;
+	//std::cout << "Mesh Draw" << std::endl;
 	for (unsigned int i = 0; i < textures.size(); i++)
 	{
 		glActiveTexture(GL_TEXTURE0 + i);
@@ -52,8 +53,9 @@ void Mesh::Draw(Shader shader)
 
 		shader.setFloat(("material." + name + number).c_str(), i);
 		glBindTexture(GL_TEXTURE_2D, textures[i].id);
+		//std::cout << textures[i].path << std::endl;
 	}
-	glActiveTexture(GL_TEXTURE0);
+	//glActiveTexture(0);
 
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);

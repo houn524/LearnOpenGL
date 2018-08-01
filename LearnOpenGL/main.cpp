@@ -60,25 +60,26 @@ int main() {
 
 	glEnable(GL_DEPTH_TEST);
 
-	Model ourModel("resources/Models/Avent/Avent.obj");// nanosuit / nanosuit.obj");
+	Model ourModel("resources/Models/old_house_obj/house_01.obj");// Avent / Avent.obj");// nanosuit / nanosuit.obj");
+	Model bulbModel("resources/Models/OBJ - Poly/Lightbulb_General_Poly_OBJ.obj");
 
 	lightingShader.use();
 	lightingShader.setVec3("dirLight.ambient", glm::vec3(0.1f, 0.1f, 0.1f));
 	lightingShader.setVec3("dirLight.diffuse", glm::vec3(0.5f, 0.5f, 0.5f));
 	lightingShader.setVec3("dirLight.specular", glm::vec3(0.9f, 0.9f, 0.9f));
 
-	/*lightingShader.setFloat("pointLights[0].constant", 1.0f);
-	lightingShader.setFloat("pointLights[0].linear", 0.14f);
-	lightingShader.setFloat("pointLights[0].quadratic", 0.07f);
-	lightingShader.setVec3("pointLights[0].ambient", glm::vec3(0.5f, 0.5f, 0.5f));
+	lightingShader.setFloat("pointLights[0].constant", 1.0f);
+	lightingShader.setFloat("pointLights[0].linear", 0.045f);
+	lightingShader.setFloat("pointLights[0].quadratic", 0.0075f);
+	lightingShader.setVec3("pointLights[0].ambient", glm::vec3(0.1f, 0.1f, 0.1f));
 	lightingShader.setVec3("pointLights[0].diffuse", glm::vec3(0.5f, 0.5f, 0.5f));
 	lightingShader.setVec3("pointLights[0].specular", glm::vec3(0.9f, 0.9f, 0.9f));
 	lightingShader.setFloat("pointLights[1].constant", 1.0f);
-	lightingShader.setFloat("pointLights[1].linear", 0.14f);
-	lightingShader.setFloat("pointLights[1].quadratic", 0.07f);
-	lightingShader.setVec3("pointLights[1].ambient", glm::vec3(0.5f, 0.5f, 0.5f));
+	lightingShader.setFloat("pointLights[1].linear", 0.045f);
+	lightingShader.setFloat("pointLights[1].quadratic", 0.0075f);
+	lightingShader.setVec3("pointLights[1].ambient", glm::vec3(0.1f, 0.1f, 0.1f));
 	lightingShader.setVec3("pointLights[1].diffuse", glm::vec3(0.5f, 0.5f, 0.5f));
-	lightingShader.setVec3("pointLights[1].specular", glm::vec3(0.9f, 0.9f, 0.9f));*/
+	lightingShader.setVec3("pointLights[1].specular", glm::vec3(0.9f, 0.9f, 0.9f));
 
 	lightingShader.setFloat("material.shininess", 64.0f);
 	
@@ -103,17 +104,33 @@ int main() {
 		lightingShader.setMat4("view", view);
 
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -10.0f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
 		lightingShader.setMat4("model", model);
 
 		lightingShader.setVec3("dirLight.direction", glm::mat3(view) * glm::vec3(-1.0f, -1.0f, -1.0f));
-		//lightingShader.setVec3("pointLights[0].position", glm::vec3(view * glm::vec4(-1.0f, -1.0f, -1.0f, 1.0f)));
-		//lightingShader.setVec3("pointLights[1].position", glm::vec3(view * glm::vec4(1.0f, 1.0f, 1.0f, 1.0f)));
+		lightingShader.setVec3("pointLights[0].position", glm::vec3(view * glm::vec4(-10.0f, 0.0f, -10.0f, 1.0f)));
+		lightingShader.setVec3("pointLights[1].position", glm::vec3(view * glm::vec4(0.0f, 10.0f, -20.0f, 1.0f)));
 		
 
 		ourModel.Draw(lightingShader);
 		
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(-10.0f, 0.0, -10.0f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		//model = glm::scale(model, glm::vec3(0.0f, 0.1f, 0.1f));
+		lampShader.use();
+		lampShader.setMat4("projection", projection);
+		lampShader.setMat4("view", view);
+		lampShader.setMat4("model", model);
+		bulbModel.Draw(lampShader);
+
+		model = glm::mat4(1.0);
+		model = glm::translate(model, glm::vec3(0.0f, 10.0, -20.0f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		lampShader.setMat4("model", model);
+		bulbModel.Draw(lampShader);
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
