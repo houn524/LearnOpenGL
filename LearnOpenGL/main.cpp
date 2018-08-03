@@ -83,7 +83,7 @@ int main() {
 
 	lightingShader.setFloat("material.shininess", 64.0f);
 	
-
+	glDepthFunc(GL_LESS);
 	while (!glfwWindowShouldClose(window)) {
 
 		float currentFrame = glfwGetTime();
