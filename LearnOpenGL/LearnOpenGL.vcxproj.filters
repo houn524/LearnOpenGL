@@ -71,6 +71,9 @@
     <None Include="Shaders\framebuffer.fragmentshader">
       <Filter>소스 파일</Filter>
     </None>
+    <None Include="Shaders\cubemap.fragmentshader">
+      <Filter>소스 파일</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">

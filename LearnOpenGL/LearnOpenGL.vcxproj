@@ -29,6 +29,7 @@
     <ClCompile Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shaders\cubemap.fragmentshader" />
     <None Include="Shaders\framebuffer.fragmentshader" />
     <None Include="Shaders\framebuffer.vertexshader" />
     <None Include="Shaders\grass.fragmentshader" />
