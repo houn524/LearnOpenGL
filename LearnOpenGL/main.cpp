@@ -19,8 +19,8 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow *window);
 
 // ¼¼ÆÃ
-const unsigned int SCR_WIDTH = 3840;
-const unsigned int SCR_HEIGHT = 2160;
+const unsigned int SCR_WIDTH = 1920;
+const unsigned int SCR_HEIGHT = 1080;
 
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float ratio = 0.2f;
