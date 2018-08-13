@@ -1,36 +1,10 @@
-﻿  Shader.cpp
-c:\opengl_tutorials\learnopengl\learnopengl\shader.cpp(55): warning C4101: 'infoLog' :참조되지 않은 지역 변수입니다.
-c:\opengl_tutorials\learnopengl\learnopengl\shader.cpp(54): warning C4101: 'success' :참조되지 않은 지역 변수입니다.
-  Model.cpp
-  Mesh.cpp
-c:\opengl_tutorials\learnopengl\learnopengl\mesh.cpp(54): warning C4244: '인수': 'unsigned int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  main.cpp
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(89): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(173): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(174): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(178): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(179): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(181): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(182): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(189): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Camera.cpp
-  코드를 생성하고 있습니다...
-  건너뛰고 있습니다... (관련된 변경 내용 없음)
-  Shader.h
-  glad.c
-Debug\Shader.obj : warning LNK4042: 개체가 두 번 이상 지정되었습니다. 나머지는 무시됩니다.
-glfw3.lib(context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(context.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(init.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(input.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(input.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(monitor.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(vulkan.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(vulkan.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(window.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(win32_init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(win32_init.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(win32_joystick.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(win32_joystick.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(win32_monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(win32_monitor.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(win32_time.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(win32_time.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(win32_tls.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(win32_tls.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(win32_window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(win32_window.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(wgl_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(wgl_context.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-glfw3.lib(egl_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'glfw3.lib(egl_context.obj)' 또는 'C:\OpenGL_tutorials\LearnOpenGL\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+﻿  main.cpp
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(150): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(282): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(283): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(287): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(288): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(290): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(291): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\opengl_tutorials\learnopengl\learnopengl\main.cpp(298): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   LearnOpenGL.vcxproj -> C:\OpenGL_tutorials\LearnOpenGL\Debug\LearnOpenGL.exe

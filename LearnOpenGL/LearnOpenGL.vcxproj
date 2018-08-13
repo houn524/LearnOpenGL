@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Grass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -28,13 +29,20 @@
     <ClCompile Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shaders\framebuffer.fragmentshader" />
+    <None Include="Shaders\framebuffer.vertexshader" />
+    <None Include="Shaders\grass.fragmentshader" />
+    <None Include="Shaders\grass.vertexshader" />
     <None Include="Shaders\lampFragment.glsl" />
     <None Include="Shaders\lampVertex.glsl" />
     <None Include="Shaders\Model.fragmentshader" />
     <None Include="Shaders\Model.vertexshader" />
+    <None Include="Shaders\shaderSingleColor.fragmentshader" />
+    <None Include="Shaders\shaderSingleColor.vertexshader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Grass.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
   </ItemGroup>
