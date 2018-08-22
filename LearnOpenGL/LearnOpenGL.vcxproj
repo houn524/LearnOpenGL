@@ -20,16 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="glad.c" />
+    <ClCompile Include="glad.cpp" />
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\cubemap.fragmentshader" />
+    <None Include="Shaders\cubemap.vertexshader" />
     <None Include="Shaders\framebuffer.fragmentshader" />
     <None Include="Shaders\framebuffer.vertexshader" />
     <None Include="Shaders\grass.fragmentshader" />
@@ -38,6 +38,7 @@
     <None Include="Shaders\lampVertex.glsl" />
     <None Include="Shaders\Model.fragmentshader" />
     <None Include="Shaders\Model.vertexshader" />
+    <None Include="Shaders\reflect.fragmentshader" />
     <None Include="Shaders\shaderSingleColor.fragmentshader" />
     <None Include="Shaders\shaderSingleColor.vertexshader" />
   </ItemGroup>
@@ -46,12 +47,13 @@
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{028B3A7C-E168-4470-8FDF-E7DC1959AB22}</ProjectGuid>
     <RootNamespace>LearnOpenGL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

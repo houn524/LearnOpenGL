@@ -12,7 +12,7 @@ newmtl Material__25
 	Kd 0.5880 0.5880 0.5880
 	Ks 0.8190 0.8190 0.8190
 	Ke 0.0000 0.0000 0.0000
-	map_Ka DSC_5871_.jpg
+	map_Ka DSC_5871_reflect.jpg
 	map_Kd DSC_5871_.jpg
 	map_Ks DSC_5871_SPEC.png
 
@@ -27,7 +27,7 @@ newmtl Material__29
 	Kd 0.5880 0.5880 0.5880
 	Ks 0.8190 0.8190 0.8190
 	Ke 0.0000 0.0000 0.0000
-	map_Ka DSC_5871_.jpg
+	map_Ka DSC_5871_reflect.jpg
 	map_Kd DSC_5871_.jpg
 	map_Ks DSC_5871_SPEC.png
 
@@ -42,7 +42,7 @@ newmtl house
 	Kd 0.5882 0.5882 0.5882
 	Ks 0.8190 0.8190 0.8190
 	Ke 0.0000 0.0000 0.0000
-	map_Ka DSC_5871_.jpg
+	map_Ka DSC_5871_reflect.jpg
 	map_Kd DSC_5871_.jpg
 	map_Ks DSC_5871_SPEC.png
 	map_bump -bm 0.7000 Map__3_Normal Bump.tga

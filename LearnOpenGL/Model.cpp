@@ -74,13 +74,18 @@ Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 	{
 		aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
 		std::vector<Texture> diffuseMaps = loadMaterialTextures(material, aiTextureType_DIFFUSE, "texture_diffuse");
+		//if(diffuseMaps != NULL)
 		textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
 
 		std::vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
+		//if(!specularMaps.empty())
 		textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 
-		if(!textures.empty())
-		std::cout << "textures : " << textures[0].path << ", " << textures[1].path << std::endl;
+		std::vector<Texture> reflectionMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_reflection");
+		textures.insert(textures.end(), reflectionMaps.begin(), reflectionMaps.end());
+
+		//if(!textures.empty())
+		//std::cout << "textures : " << textures[0].path << ", " << textures[1].path << std::endl;
 	}
 	
 	return Mesh(vertices, indices, textures);

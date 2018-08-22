@@ -15,16 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="glad.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.h">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
@@ -37,6 +28,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Grass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,6 +71,12 @@
     <None Include="Shaders\cubemap.fragmentshader">
       <Filter>소스 파일</Filter>
     </None>
+    <None Include="Shaders\cubemap.vertexshader">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\reflect.fragmentshader">
+      <Filter>소스 파일</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -86,6 +89,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Grass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
