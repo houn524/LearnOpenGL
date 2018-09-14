@@ -37,7 +37,14 @@
     <None Include="Shaders\lampFragment.glsl" />
     <None Include="Shaders\lampVertex.glsl" />
     <None Include="Shaders\Model.fragmentshader" />
+    <None Include="Shaders\Model.geometryshader" />
     <None Include="Shaders\Model.vertexshader" />
+    <None Include="Shaders\normalFS.glsl" />
+    <None Include="Shaders\normalGS.glsl" />
+    <None Include="Shaders\normalVS.glsl" />
+    <None Include="Shaders\pointsFS.glsl" />
+    <None Include="Shaders\pointsGS.glsl" />
+    <None Include="Shaders\pointsVS.glsl" />
     <None Include="Shaders\reflect.fragmentshader" />
     <None Include="Shaders\shaderSingleColor.fragmentshader" />
     <None Include="Shaders\shaderSingleColor.vertexshader" />

@@ -38,6 +38,13 @@ float lastFrame = 0.0f;
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
+float points[] = {
+	-0.5f,  0.5f, 1.0f, 0.0f, 0.0f, // top-left
+	0.5f,  0.5f, 0.0f, 1.0f, 0.0f, // top-right
+	0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // bottom-right
+	-0.5f, -0.5f, 1.0f, 1.0f, 0.0f  // bottom-left
+};
+
 float quadVertices[] = {
 	// positions   // texCoords
 	-1.0f,  1.0f,  0.0f, 1.0f,
@@ -128,13 +135,15 @@ int main() {
 	unsigned int cubemapTexture = loadCubemap(faces);
 	setupSkyboxVAO();
 
-	Shader lightingShader("Shaders/Model.vertexshader", "Shaders/Model.fragmentshader");
+	Shader lightingShader("Shaders/Model.vertexshader", "Shaders/Model.fragmentshader");// , "Shaders/Model.geometryshader");
 	Shader lampShader("Shaders/lampVertex.glsl", "Shaders/lampFragment.glsl");
 	Shader shaderSingleColor("Shaders/shaderSingleColor.vertexshader", "Shaders/shaderSingleColor.fragmentshader");
 	Shader grassShader("Shaders/grass.vertexshader", "Shaders/grass.fragmentshader");
 	Shader framebufferShader("Shaders/framebuffer.vertexshader", "Shaders/framebuffer.fragmentshader");
 	Shader skyboxShader("Shaders/cubemap.vertexshader", "Shaders/cubemap.fragmentshader");
 	Shader reflectiveModelShader("Shaders/Model.vertexshader", "Shaders/reflect.fragmentshader");
+	Shader pointsShader("Shaders/pointsVS.glsl", "Shaders/pointsFS.glsl", "Shaders/pointsGS.glsl");
+	Shader normalShader("Shaders/normalVS.glsl", "Shaders/normalFS.glsl", "Shaders/normalGS.glsl");
 
 	//unsigned int uniformBlockIndexLightingSh = glGetUniformBlockIndex(lightingShader.ID, "Matrices");
 	//unsigned int uniformBlockIndexGrassSh = glGetUniformBlockIndex(grassShader.ID, "Matrices");
@@ -197,6 +206,23 @@ int main() {
 
 	glBindVertexArray(0);
 
+	unsigned int pointsVAO, pointsVBO;
+	glGenVertexArrays(1, &pointsVAO);
+	glGenBuffers(1, &pointsVBO);
+
+	glBindVertexArray(pointsVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, pointsVBO);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void*)0);
+
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void*)(sizeof(float) * 2));
+
+	glBindVertexArray(0);
+
 	unsigned int framebuffer;
 	glGenFramebuffers(1, &framebuffer);
 	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
@@ -242,7 +268,7 @@ int main() {
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_CULL_FACE);
 
-		glEnable(GL_PROGRAM_POINT_SIZE);
+		//glEnable(GL_PROGRAM_POINT_SIZE);
 
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 		glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
@@ -295,7 +321,12 @@ int main() {
 		//reflectiveModelShader.setVec3("cameraPos", camera.Position);
 		//glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
 
+		//lightingShader.setFloat("time", glfwGetTime());
 		ourModel.Draw(lightingShader);
+		normalShader.use();
+		normalShader.setMat4("model", houseModelMat);
+		ourModel.Draw(normalShader);
+		
 
 		skyboxShader.use();
 		skyboxShader.setMat4("projection", projection);
@@ -304,7 +335,11 @@ int main() {
 		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
+
 		glDisable(GL_CULL_FACE);
+
+		
+
 		grassShader.use();
 		//grassShader.setMat4("projection", projection);
 		//grassShader.setMat4("view", view);
@@ -343,6 +378,10 @@ int main() {
 		glBindTexture(GL_TEXTURE_2D, texColorBuffer);
 		framebufferShader.setInt("screenTexture", 0);
 		glDrawArrays(GL_TRIANGLES, 0, 6);
+
+		//pointsShader.use();
+		//glBindVertexArray(pointsVAO);
+		//glDrawArrays(GL_POINTS, 0, 4);
 
 		
 

@@ -77,6 +77,27 @@
     <None Include="Shaders\reflect.fragmentshader">
       <Filter>소스 파일</Filter>
     </None>
+    <None Include="Shaders\pointsVS.glsl">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\pointsFS.glsl">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\pointsGS.glsl">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\Model.geometryshader">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\normalVS.glsl">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\normalGS.glsl">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="Shaders\normalFS.glsl">
+      <Filter>소스 파일</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
